@@ -37,10 +37,10 @@ on:
       BUILD_TARGET:
         description: 'Specify your Build Target'
         required: true
-        default: 'vendorboot'
+        default: 'boot'
         type: choice
         options:
-        - vendorboot
+        - boot
 
 jobs:
   build:
