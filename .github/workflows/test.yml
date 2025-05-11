@@ -6,7 +6,7 @@ on:
       MANIFEST_URL:
         description: 'TWRP Manifest'
         required: true
-        default: 'https://github.com/ymdzq/manifest_twrp'
+        default: 'https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp'
       MANIFEST_BRANCH:
         description: 'TWRP Manifest Branch'
         required: true
