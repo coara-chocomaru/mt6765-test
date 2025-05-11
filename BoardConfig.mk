@@ -113,7 +113,7 @@ BOARD_MAIN_PARTITION_LIST := system vendor product odm system_ext
 BOARD_MAIN_SIZE := 10380902400 
 
 # VINTF
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/recovery/root/vendor/etc/vintf/manifest_mt6765.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/recovery/root/vendor/etc/vintf/manifest.xml
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6765
