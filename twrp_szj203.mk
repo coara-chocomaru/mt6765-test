@@ -12,16 +12,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-# Inherit from CG65 device
-$(call inherit-product, device/vortex/CG65/device.mk)
+$(call inherit-product, device/justsystems/szj203/device.mk)
 
-PRODUCT_DEVICE := CG65
-PRODUCT_NAME := twrp_CG65
-PRODUCT_BRAND := Vortex
-PRODUCT_MODEL := CG65
-PRODUCT_MANUFACTURER := vortex
+PRODUCT_DEVICE := SZJ203
+PRODUCT_NAME := twrp_SZJ203
+PRODUCT_BRAND := justsystems
+PRODUCT_MODEL := SZJ203
+PRODUCT_MANUFACTURER := kyocera
 
-PRODUCT_GMS_CLIENTID_BASE := android-vortex
+PRODUCT_GMS_CLIENTID_BASE := android-kyocera
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
@@ -29,4 +28,4 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="vnd_k65v1_64_bsp-user 12 SP1A.210812.016 20231108 release-keys"
 
-BUILD_FINGERPRINT := Vortex/CG65/CG65:13/TP1A.220624.014/20231108:user/release-keys
+BUILD_FINGERPRINT := JUSTSYSTEMS/SZJ203/SZJ203:12/SP1A.210812.016/3.130JS.0249.a:user/release-keys
