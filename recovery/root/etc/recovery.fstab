@@ -1,111 +1,46 @@
-# 1 "vendor/mediatek/proprietary/hardware/fstab/mt6765/fstab_recovery.in.mt6765"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 341 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "vendor/mediatek/proprietary/hardware/fstab/mt6765/fstab_recovery.in.mt6765" 2
-# 145 "vendor/mediatek/proprietary/hardware/fstab/mt6765/fstab_recovery.in.mt6765"
-system /system ext4 rw wait,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey,slotselect
+/system                   ext4     system                               flags=display="system";logical;slotselect;backup=1;wipeingui;flashimg
+/system_ext               ext4     system_ext                           flags=display="system_ext";logical;slotselect;backup=1;wipeingui;flashimg
+/vendor                   ext4     vendor                               flags=display="vendor";logical;slotselect;backup=1;wipeingui;flashimg
+/odm                      ext4     odm                                  flags=display="odm";logical;slotselect;backup=1;wipeingui;flashimg
+/product                  ext4     product                              flags=display="product";logical;slotselect;backup=1;wipeingui;flashimg
+/metadata                 ext4     /dev/block/by-name/md_udc            flags=display="metadata";backup=1;wrappedkey
+/data                     ext4     /dev/block/by-name/userdata          flags=display="data";wipeingui;backup=1
+/protect_f                ext4     /dev/block/by-name/protect1          flags=display="protect_f";backup=1
+/protect_s                ext4     /dev/block/by-name/protect2          flags=display="protect_s";backup=1;subpartitionof=/protect_f
+/nvdata                   ext4     /dev/block/by-name/nvdata            flags=display="nvdata";backup=1
+/nvcfg                    ext4     /dev/block/by-name/nvcfg             flags=display="nvcfg";backup=1
+/persist                  ext4     /dev/block/by-name/persist           flags=display="persist";backup=1
+/persistent               emmc     /dev/block/by-name/frp               flags=display="persistent";backup=1
+/nvram                    emmc     /dev/block/by-name/nvram             flags=display="nvram";backup=1;flashimg=1
+/proinfo                  emmc     /dev/block/by-name/proinfo           flags=display="proinfo";backup=1
+/lk_a                     emmc     /dev/block/by-name/lk_a              flags=display="lk_a";backup=1;flashimg=1
+/lk_b                     emmc     /dev/block/by-name/lk_b              flags=display="lk_b";backup=1;flashimg=1
+/misc                     emmc     /dev/block/by-name/para              flags=display="misc";backup=1;flashimg=1
+/boot                     emmc     /dev/block/by-name/boot              flags=display="boot";slotselect;backup=1;flashimg=1
+/vbmeta_vendor_a          emmc     /dev/block/by-name/vbmeta_vendor_a   flags=display="vbmeta_vendor_a";backup=1;flashimg=1;slotselect
+/vbmeta_system_a          emmc     /dev/block/by-name/vbmeta_system_a   flags=display="vbmeta_system_a";backup=1;flashimg=1
+/logo                     emmc     /dev/block/by-name/logo              flags=display="logo";backup=1;flashimg=1
+/expdb                    emmc     /dev/block/by-name/expdb             flags=display="expdb";backup=1
+/seccfg                   emmc     /dev/block/by-name/seccfg            flags=display="seccfg";backup=1
+/tee_a                    emmc     /dev/block/by-name/tee_a             flags=display="tee_a";backup=1;flashimg=1
+/tee_b                    emmc     /dev/block/by-name/tee_b             flags=display="tee_b";backup=1;flashimg=1
+/scp_a                    emmc     /dev/block/by-name/scp_a             flags=display="scp_a";backup=1
+/scp_b                    emmc     /dev/block/by-name/scp_b             flags=display="scp_b";backup=1;subpartitionof=/scp_a
+/sspm_a                   emmc     /dev/block/by-name/sspm_a            flags=display="sspm_a";backup=1
+/sspm_b                   emmc     /dev/block/by-name/sspm_b            flags=display="sspm_b";backup=1;subpartitionof=/sspm_a
+/super			              emmc     /dev/block/by-name/super		          flags=display="super";backup=1;wipeingui;flashimg=1
+/md1img_a                 emmc     /dev/block/by-name/md1img_a          flags=display="md1img_a";backup=1;flashimg=1
+/md1dsp                   emmc     /dev/block/by-name/md1dsp            flags=display="md1dsp";backup=1
+/md1arm7                  emmc     /dev/block/by-name/md1arm7           flags=display="md1arm7"
+/md3img                   emmc     /dev/block/by-name/md3img            flags=display="md3img"
+/gz_a                     emmc     /dev/block/by-name/gz_a              flags=display="gz_a";backup=1
+/gz_b                     emmc     /dev/block/by-name/gz_b              flags=display="gz_b";backup=1;subpartitionof=/gz_a
+/spmfw_a                  emmc     /dev/block/by-name/spmfw_a           flags=display="spmfw_a";backup=1
+/boot_para                emmc     /dev/block/by-name/boot_para         flags=display="boot_para";backup=1
+/odmdtbo                  emmc     /dev/block/by-name/odmdtbo           flags=display="odmdtbo"
+/dtbo_a                   emmc     /dev/block/by-name/dtbo_a            flags=display="dtbo_a";backup=1;flashimg=1
+/vbmeta_a                 emmc     /dev/block/by-name/vbmeta_a          flags=display="vbmeta_a";backup=1;flashimg=1
 
-system_ext /system_ext ext4 rw wait,avb,logical,first_stage_mount,slotselect
-
-
-vendor /vendor ext4 rw wait,avb,logical,first_stage_mount,slotselect
-
-
-product /product ext4 rw wait,avb,logical,first_stage_mount,slotselect
-
-
-odm /odm ext4 ro wait,avb,logical,first_stage_mount,slotselect
-# 172 "vendor/mediatek/proprietary/hardware/fstab/mt6765/fstab_recovery.in.mt6765"
-/dev/block/by-name/md_udc /metadata ext4 noatime,nosuid,nodev,discard wait,check,formattable,first_stage_mount
-/dev/block/by-name/metadata_zemi /metadata_zemi ext4 noatime,nosuid,nodev,discard wait,check,formattable,first_stage_mount
-
-
-/dev/block/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,errors=panic,inlinecrypt latemount,wait,check,quota,reservedsize=128M,formattable,resize,,checkpoint=block,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption
-/dev/block/by-name/userdata_zemi /data_zemi ext4 noatime,nosuid,nodev,noauto_da_alloc,errors=panic,inlinecrypt latemount,wait,check,quota,reservedsize=128M,formattable,resize,checkpoint=block,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata_zemi/vold/metadata_encryption
-
-
-
-
-/dev/block/by-name/protect1 /mnt/vendor/protect_f ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
-/dev/block/by-name/protect2 /mnt/vendor/protect_s ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
-/dev/block/by-name/nvdata /mnt/vendor/nvdata ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
-/dev/block/by-name/nvcfg /mnt/vendor/nvcfg ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
-
-
-/dev/block/by-name/persist /mnt/vendor/persist ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
-
-
-/dev/block/by-name/logwork /mnt/vendor/logwork ext4 nosuid,nodev,barrier=1,noauto_da_alloc,noatime,discard wait,check,nofail
-
-/dev/block/by-name/sysaeeexp /mnt/exps/system_aee_exp ext4 nosuid,nodev,barrier=1,noauto_da_alloc,noatime,discard wait,check,nofail
-
-/dev/block/by-name/vendaeeexp /mnt/vendor/vendor_aee_exp ext4 nosuid,nodev,barrier=1,noauto_da_alloc,noatime,discard wait,check,nofail
-
-/dev/block/by-name/sysprop /mnt/vendor/pstore ext4 nosuid,nodev,barrier=1,noauto_da_alloc,noatime,data=journal,errors=panic wait,check,nofail
-
-
-/devices/platform/externdevice* auto auto defaults voldmanaged=sdcard1:auto,encryptable=userdata
-
-
-
-/devices/platform/mt_usb* auto vfat defaults voldmanaged=usbotg:auto
-
-/dev/block/by-name/frp /persistent emmc defaults defaults
-
-/dev/block/by-name/nvram /nvram emmc defaults defaults
-/dev/block/by-name/proinfo /proinfo emmc defaults defaults
-/dev/block/by-name/lk /bootloader emmc defaults defaults
-/dev/block/by-name/lk2 /bootloader2 emmc defaults defaults
-/dev/block/by-name/para /misc emmc defaults defaults
-
-/dev/block/by-name/boot /boot emmc defaults first_stage_mount,nofail,slotselect
-# 223 "vendor/mediatek/proprietary/hardware/fstab/mt6765/fstab_recovery.in.mt6765"
-/dev/block/by-name/vbmeta_vendor /vbmeta_vendor emmc defaults first_stage_mount,nofail,slotselect
-/dev/block/by-name/vbmeta_system /vbmeta_system emmc defaults first_stage_mount,nofail,slotselect,avb=vbmeta
-
-
-
-
-
-/dev/block/by-name/logo /logo emmc defaults defaults
-/dev/block/by-name/expdb /expdb emmc defaults defaults
-/dev/block/by-name/seccfg /seccfg emmc defaults defaults
-
-/dev/block/by-name/tee1 /tee1 emmc defaults defaults
-/dev/block/by-name/tee2 /tee2 emmc defaults defaults
-
-
-/dev/block/by-name/scp1 /scp1 emmc defaults defaults
-/dev/block/by-name/scp2 /scp2 emmc defaults defaults
-
-
-/dev/block/by-name/sspm_1 /sspm_1 emmc defaults defaults
-/dev/block/by-name/sspm_2 /sspm_2 emmc defaults defaults
-
-
-
-
-/dev/block/by-name/md1img /md1img emmc defaults defaults
-/dev/block/by-name/md1dsp /md1dsp emmc defaults defaults
-/dev/block/by-name/md1arm7 /md1arm7 emmc defaults defaults
-/dev/block/by-name/md3img /md3img emmc defaults defaults
-
-
-
-
-
-/dev/block/by-name/gz1 /gz1 emmc defaults defaults
-/dev/block/by-name/gz2 /gz2 emmc defaults defaults
-
-/dev/block/by-name/spmfw /spmfw emmc defaults defaults
-
-/dev/block/by-name/boot_para /boot_para emmc defaults defaults
-/dev/block/by-name/odmdtbo /odmdtbo emmc defaults defaults
-/dev/block/by-name/dtbo /dtbo emmc defaults defaults
-
-/dev/block/by-name/vbmeta /vbmeta emmc defaults defaults
-
-/dev/block/by-name/wifi_cache /wifi_cache ext4 nosuid,nodev,barrier=1,noauto_da_alloc,noatime,data=journal,errors=panic wait,check,nofail
+# Removable storage
+/external_sd              vfat     /dev/block/mmcblk1p1    /dev/block/mmcblk1        flags=storage;wipeingui;removable
+/usb-otg                  auto     /dev/block/sda1    /dev/block/sda                 flags=display="USB-OTG";storage;wipeingui;removable
