@@ -6,13 +6,20 @@
 #
 
 LOCAL_PATH := device/kyocera/szj203
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_TARGET_VNDK_VERSION := 31
+PRODUCT_SHIPPING_API_LEVEL := 30
 
 # A/B
+ENABLE_VIRTUAL_AB := true
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/ \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
+
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    $(LOCAL_PATH)/security/releasekey
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
@@ -36,3 +43,6 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
+
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
