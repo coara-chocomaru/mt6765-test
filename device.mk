@@ -19,7 +19,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_OPTIONAL_system=true
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(LOCAL_PATH)/security/releasekey.x509.pem
+    $(LOCAL_PATH)/security/releasekey
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
