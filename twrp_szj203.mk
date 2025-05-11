@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-$(call inherit-product, device/justsystems/szj203/device.mk)
+$(call inherit-product, device/kyocera/szj203/device.mk)
 
 PRODUCT_DEVICE := SZJ203
 PRODUCT_NAME := twrp_SZJ203
