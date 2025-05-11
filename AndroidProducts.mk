@@ -9,6 +9,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_CG65.mk
 
 COMMON_LUNCH_CHOICES :=  \
-    twrp_CG65-user \
-    twrp_CG65-userdebug \
-    twrp_CG65-eng
+    twrp_SZJ203-user \
+    twrp_SZJ203-userdebug \
+    twrp_SZJ203-eng
