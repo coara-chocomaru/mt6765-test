@@ -34,9 +34,6 @@ on:
         type: choice
         options:
         - twrp_szj203
-        - twrp_303dt
-        - twrp_mt6765
-        - twrp_pipa
       BUILD_TARGET:
         description: 'Specify your Build Target'
         required: true
@@ -45,7 +42,6 @@ on:
         options:
         - boot
         - recovery
-        - vendorboot
 
 jobs:
   build:
