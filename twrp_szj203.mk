@@ -30,8 +30,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.build.product=SZJ-JS203 \
     ro.product.board=k65v1_64_bsp \
     ro.product.device=SZJ203 \
-    persist.sys.usb.config=mtp
-
+    persist.sys.usb.config=adb
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="vnd_k65v1_64_bsp-user 12 SP1A.210812.016 20231108 release-keys"
 
