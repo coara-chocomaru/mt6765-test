@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/justsystem/szj203
+DEVICE_PATH := device/kyocera/szj203
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -13,7 +13,7 @@ ALLOW_MISSING_DEPENDENCIES := true
 # A/B
 AB_OTA_UPDATER := true
 BOARD_USES_RECOVERY_AS_BOOT := true
-BOARD_VENDOR := justsystem
+BOARD_VENDOR := kyocera
 BOARD_DEVICE := szj203
 TARGET_BUILD_64BIT := true
 ENABLE_CPUSETS := true
