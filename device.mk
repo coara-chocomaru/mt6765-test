@@ -10,6 +10,24 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_TARGET_VNDK_VERSION := 31
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1
+
+# Keymint
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint \
+    android.hardware.security.secureclock \
+    android.hardware.security.sharedsecret
+
+# Keystore2
+PRODUCT_PACKAGES += \
+    android.system.keystore2
+
+# Mtk plpath utils
+PRODUCT_PACKAGES += \
+    mtk_plpath_utils \
+    mtk_plpath_utils.recovery
 # A/B
 ENABLE_VIRTUAL_AB := true
 AB_OTA_POSTINSTALL_CONFIG += \
