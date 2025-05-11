@@ -10,9 +10,6 @@ DEVICE_PATH := device/kyocera/szj203
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
-BOARD_SUPPRESS_SECURE_ERASE := true
-
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
@@ -26,7 +23,7 @@ AB_OTA_PARTITIONS += \
     vbmeta_system \
     vendor \
     vendor_boot
-
+TARGET_OTA_ASSERT_DEVICE := SZJ-JS203
 BOARD_USES_RECOVERY_AS_BOOT := true
 BOARD_VENDOR := kyocera
 BOARD_DEVICE := szj203
