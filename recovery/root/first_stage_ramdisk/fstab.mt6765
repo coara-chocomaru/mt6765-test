@@ -19,13 +19,11 @@ odm /odm ext4 ro wait,avb,logical,first_stage_mount,slotselect
 # 170 "vendor/mediatek/proprietary/hardware/fstab/mt6765/fstab.in.mt6765"
 /dev/block/by-name/md_udc /metadata ext4 noatime,nosuid,nodev,discard wait,check,formattable,first_stage_mount
 
-/dev/block/by-name/metadata_zemi /metadata ext4 noatime,nosuid,nodev,discard wait,check,formattable,first_stage_mount
 
 
 
 /dev/block/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,errors=panic,inlinecrypt latemount,wait,check,quota,reservedsize=128M,formattable,resize,,checkpoint=block,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption
 
-/dev/block/by-name/userdata_zemi /data ext4 noatime,nosuid,nodev,noauto_da_alloc,errors=panic,inlinecrypt latemount,wait,check,quota,reservedsize=128M,formattable,resize,,checkpoint=block,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption
 
 
 
@@ -41,8 +39,6 @@ odm /odm ext4 ro wait,avb,logical,first_stage_mount,slotselect
 
 
 /dev/block/by-name/logwork /mnt/vendor/logwork ext4 nosuid,nodev,barrier=1,noauto_da_alloc,noatime,discard wait,check,nofail
-
-/dev/block/by-name/sysaeeexp /mnt/exps/system_aee_exp ext4 nosuid,nodev,barrier=1,noauto_da_alloc,noatime,discard wait,check,nofail
 
 /dev/block/by-name/vendaeeexp /mnt/vendor/vendor_aee_exp ext4 nosuid,nodev,barrier=1,noauto_da_alloc,noatime,discard wait,check,nofail
 
