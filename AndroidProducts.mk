@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_SZJ203.mk
+    $(LOCAL_DIR)/twrp_szj203.mk
 
 COMMON_LUNCH_CHOICES :=  \
-    twrp_SZJ203-user \
-    twrp_SZJ203-userdebug \
-    twrp_SZJ203-eng
+    twrp_szj203-user \
+    twrp_szj203-userdebug \
+    twrp_szj203-eng
