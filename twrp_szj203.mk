@@ -15,7 +15,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 $(call inherit-product, device/kyocera/szj203/device.mk)
 
 PRODUCT_DEVICE := szj203
-PRODUCT_NAME := twrp_SZJ203
+PRODUCT_NAME := twrp_szj203
 PRODUCT_BRAND := justsystems
 PRODUCT_MODEL := SZJ203
 PRODUCT_MANUFACTURER := kyocera
