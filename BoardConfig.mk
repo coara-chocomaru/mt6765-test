@@ -109,9 +109,6 @@ BOARD_SUPER_PARTITION_GROUPS := main
 BOARD_MAIN_PARTITION_LIST := system vendor product odm system_ext
 BOARD_MAIN_SIZE := 10380902400 
 
-# Set FSTAB
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
-
 # VINTF
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/recovery/root/vendor/etc/vintf/manifest_mt6765.xml
 
