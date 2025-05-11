@@ -8,8 +8,8 @@
 
 set -e
 
-DEVICE=CG65
-VENDOR=vortex
+DEVICE=szj203
+VENDOR=kyocera
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
