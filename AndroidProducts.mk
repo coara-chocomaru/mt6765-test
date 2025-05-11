@@ -6,7 +6,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_CG65.mk
+    $(LOCAL_DIR)/twrp_SZJ203.mk
 
 COMMON_LUNCH_CHOICES :=  \
     twrp_SZJ203-user \
