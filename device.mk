@@ -6,9 +6,6 @@
 #
 
 LOCAL_PATH := device/kyocera/szj203
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-PRODUCT_TARGET_VNDK_VERSION := 31
-PRODUCT_SHIPPING_API_LEVEL := 30
 
 # A/B
 ENABLE_VIRTUAL_AB := true
@@ -43,6 +40,3 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
-
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
