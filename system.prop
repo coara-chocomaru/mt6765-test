@@ -1,4 +1,6 @@
 ro.adb.secure=0
+ro.secure=0
+ro.debuggable=1
 ro.boot.dynamic_partitions=true
 ro.hardware.gatekeeper=beanpod
 ro.charger.enable_suspend=1
