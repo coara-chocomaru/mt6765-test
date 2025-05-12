@@ -16,4 +16,5 @@ ro.board.platform=mt6765
 ro.mediatek.platform=MT6765
 ro.boot.atm=true
 ro.boot.mode=recovery
+ro.bootmode=recovery
 ro.boot.force_normal_boot=0
