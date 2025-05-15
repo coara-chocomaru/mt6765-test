@@ -1,6 +1,3 @@
-ro.adb.secure=0
-ro.secure=0
-ro.debuggable=1
 ro.boot.dynamic_partitions=true
 ro.hardware.gatekeeper=beanpod
 ro.charger.enable_suspend=1
@@ -17,6 +14,3 @@ ro.boot.hardware=mt6765
 ro.board.platform=mt6765
 ro.mediatek.platform=MT6765
 ro.boot.atm=true
-ro.boot.mode=recovery
-ro.bootmode=recovery
-ro.boot.force_normal_boot=0
