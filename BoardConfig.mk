@@ -9,6 +9,8 @@ LZMA_RAMDISK_TARGETS := boot
 DEVICE_PATH := device/kyocera/szj203
 BUILD_BROKEN_DUP_RULES := true
 # For building with minimal manifest
+
+BOARD_ROOT_EXTRA_FOLDERS := wifi_cache
 ALLOW_MISSING_DEPENDENCIES := true
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 BOARD_VNDK_VERSION := current
