@@ -8,6 +8,7 @@
 /data                     f2fs     /dev/block/by-name/userdata          flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption
 /protect_f                ext4     /dev/block/by-name/protect1          flags=display="protect_f";backup=1
 /protect_s                ext4     /dev/block/by-name/protect2          flags=display="protect_s";backup=1;subpartitionof=/protect_f
+/persist                  ext4     /dev/block/by-name/persist           flags=display="persist";backup=1
 /persistent               emmc     /dev/block/by-name/frp               flags=display="persistent";backup=1
 /proinfo                  emmc     /dev/block/by-name/proinfo           flags=display="proinfo";backup=1
 /lk                       emmc     /dev/block/by-name/lk                flags=display="lk";slotselect;backup=1;flashimg=1
