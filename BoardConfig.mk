@@ -9,7 +9,13 @@ DEVICE_PATH := device/kyocera/szj203
 BUILD_BROKEN_DUP_RULES := true
 # For building with minimal manifest
 
-BOARD_ROOT_EXTRA_FOLDERS += metadata wifi_cache
+BOARD_ROOT_EXTRA_FOLDERS += \
+metadata \
+wifi_cache \
+mnt/vendor/protect_f \
+mnt/vendor/protect_s
+
+
 ALLOW_MISSING_DEPENDENCIES := true
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 BOARD_VNDK_VERSION := current
