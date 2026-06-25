@@ -56,6 +56,12 @@ on boot
     chmod 0666 /config/usb_gadget/g1/strings/0x409/product
     write /sys/module/block/parameters/events_dfl_poll_msecs 1000
 
+on property:init.svc.adbd=running
+    setprop sys.usb.ffs.ready 1
+
+on property:init.svc.fastbootd=running
+    setprop sys.usb.ffs.fastboot.ready 1
+
 on property:init.svc.adbd=stopped
     setprop sys.usb.ffs.ready 0
 
