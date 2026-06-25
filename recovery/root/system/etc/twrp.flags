@@ -10,28 +10,23 @@
 /protect_s                ext4     /dev/block/by-name/protect2          flags=display="protect_s";backup=1;subpartitionof=/protect_f
 /persistent               emmc     /dev/block/by-name/frp               flags=display="persistent";backup=1
 /proinfo                  emmc     /dev/block/by-name/proinfo           flags=display="proinfo";backup=1
-/lk_a                     emmc     /dev/block/by-name/lk_a              flags=display="lk_a";backup=1;flashimg=1
-/lk_b                     emmc     /dev/block/by-name/lk_b              flags=display="lk_b";backup=1;flashimg=1
+/lk                       emmc     /dev/block/by-name/lk                flags=display="lk";slotselect;backup=1;flashimg=1
 /misc                     emmc     /dev/block/by-name/para              flags=display="misc";backup=1;flashimg=1
 /boot                     emmc     /dev/block/by-name/boot              flags=display="boot";slotselect;backup=1;flashimg=1
-/vbmeta_vendor_a          emmc     /dev/block/by-name/vbmeta_vendor_a   flags=display="vbmeta_vendor_a";backup=1;flashimg=1;slotselect
+/vbmeta_vendor_a          emmc     /dev/block/by-name/vbmeta_vendor_a   flags=display="vbmeta_vendor_a";backup=1;flashimg=1
 /vbmeta_system_a          emmc     /dev/block/by-name/vbmeta_system_a   flags=display="vbmeta_system_a";backup=1;flashimg=1
 /logo                     emmc     /dev/block/by-name/logo              flags=display="logo";backup=1;flashimg=1
 /expdb                    emmc     /dev/block/by-name/expdb             flags=display="expdb";backup=1
 /seccfg                   emmc     /dev/block/by-name/seccfg            flags=display="seccfg";backup=1
-/tee_a                    emmc     /dev/block/by-name/tee_a             flags=display="tee_a";backup=1;flashimg=1
-/tee_b                    emmc     /dev/block/by-name/tee_b             flags=display="tee_b";backup=1;flashimg=1
-/scp_a                    emmc     /dev/block/by-name/scp_a             flags=display="scp_a";backup=1
-/scp_b                    emmc     /dev/block/by-name/scp_b             flags=display="scp_b";backup=1;subpartitionof=/scp_a
-/sspm_a                   emmc     /dev/block/by-name/sspm_a            flags=display="sspm_a";backup=1
-/sspm_b                   emmc     /dev/block/by-name/sspm_b            flags=display="sspm_b";backup=1;subpartitionof=/sspm_a
+/tee                      emmc     /dev/block/by-name/tee               flags=display="tee";slotselect;backup=1;flashimg=1
+/scp                      emmc     /dev/block/by-name/scp               flags=display="scp";slotselect;backup=1
+/sspm                     emmc     /dev/block/by-name/sspm              flags=display="sspm";slotselect;backup=1
 /super			              emmc     /dev/block/by-name/super		          flags=display="super";backup=1;wipeingui;flashimg=1
 /md1img_a                 emmc     /dev/block/by-name/md1img_a          flags=display="md1img_a";backup=1;flashimg=1
 /md1dsp                   emmc     /dev/block/by-name/md1dsp            flags=display="md1dsp";backup=1
 /md1arm7                  emmc     /dev/block/by-name/md1arm7           flags=display="md1arm7"
 /md3img                   emmc     /dev/block/by-name/md3img            flags=display="md3img"
-/gz_a                     emmc     /dev/block/by-name/gz_a              flags=display="gz_a";backup=1
-/gz_b                     emmc     /dev/block/by-name/gz_b              flags=display="gz_b";backup=1;subpartitionof=/gz_a
+/gz                       emmc     /dev/block/by-name/gz                flags=display="gz";slotselect;backup=1
 /spmfw_a                  emmc     /dev/block/by-name/spmfw_a           flags=display="spmfw_a";backup=1
 /boot_para                emmc     /dev/block/by-name/boot_para         flags=display="boot_para";backup=1
 /odmdtbo                  emmc     /dev/block/by-name/odmdtbo           flags=display="odmdtbo"
@@ -39,7 +34,5 @@
 /vbmeta_a                 emmc     /dev/block/by-name/vbmeta_a          flags=display="vbmeta_a";backup=1;flashimg=1
 /wifi_cache               ext4     /dev/block/by-name/wifi_cache        flags=display="wifi_cache";backup=1;flashimg=1
 
-
-# Removable storage
 /external_sd              vfat     /dev/block/mmcblk1p1    /dev/block/mmcblk1        flags=storage;wipeingui;removable
 /usb-otg                  auto     /dev/block/sda1    /dev/block/sda                 flags=display="USB-OTG";storage;wipeingui;removable
