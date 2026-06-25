@@ -24,18 +24,20 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 # Boot control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
+    android.hardware.boot@1.0-service \
+    android.hardware.boot@1.0-impl.recovery \
+
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service \
+    android.hardware.health@2.1-impl.recovery
 
 PRODUCT_PACKAGES += \
     bootctrl.mt6765 \
+    bootctrl.mt6765.recovery \
     android.hardware.fastboot@1.0-impl-mock \
-    fastbootd
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.mt6765 \
     libgptutils \
-    libz \
-    libcutils
+    fastbootd
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
