@@ -12,9 +12,13 @@ BUILD_BROKEN_DUP_RULES := true
 BOARD_ROOT_EXTRA_FOLDERS += \
 metadata \
 wifi_cache \
-mnt/vendor/protect_f \
-mnt/vendor/protect_s
-
+/mnt/vendor/protect_f
+/mnt/vendor/protect_s
+/mnt/vendor/nvcfg
+/mnt/vendor/persist
+/mnt/vendor/logwork
+/mnt/vendor/vendor_aee_exp
+/mnt/vendor/pstore
 
 ALLOW_MISSING_DEPENDENCIES := true
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
