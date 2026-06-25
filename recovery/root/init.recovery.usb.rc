@@ -58,9 +58,11 @@ on boot
 
 on property:init.svc.adbd=running
     setprop sys.usb.ffs.ready 1
+    setprop sys.usb.config adb
 
 on property:init.svc.fastbootd=running
     setprop sys.usb.ffs.fastboot.ready 1
+    setprop sys.usb.config fastboot
 
 on property:init.svc.adbd=stopped
     setprop sys.usb.ffs.ready 0
