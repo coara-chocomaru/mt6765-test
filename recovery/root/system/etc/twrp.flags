@@ -37,6 +37,8 @@
 /odmdtbo                  emmc     /dev/block/by-name/odmdtbo           flags=display="odmdtbo"
 /dtbo_a                   emmc     /dev/block/by-name/dtbo_a            flags=display="dtbo_a";backup=1;flashimg=1
 /vbmeta_a                 emmc     /dev/block/by-name/vbmeta_a          flags=display="vbmeta_a";backup=1;flashimg=1
+/wifi_cache               ext4     /dev/block/by-name/wifi_cache        flags=display="wifi_cache";backup=1;flashimg=1
+
 
 # Removable storage
 /external_sd              vfat     /dev/block/mmcblk1p1    /dev/block/mmcblk1        flags=storage;wipeingui;removable
