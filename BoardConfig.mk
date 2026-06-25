@@ -9,6 +9,7 @@
 
 DEVICE_PATH := device/kyocera/szj203
 BUILD_BROKEN_DUP_RULES := true
+
 # For building with minimal manifest
 
 BOARD_ROOT_EXTRA_FOLDERS += \
@@ -34,6 +35,7 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 ALLOW_MISSING_DEPENDENCIES := true
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 BOARD_VNDK_VERSION := current
+
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
@@ -161,9 +163,6 @@ RECOVERY_SDCARD_ON_DATA := true
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
-# Security patch level
-VENDOR_SECURITY_PATCH := 2024-05-05
-
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 1
@@ -188,7 +187,6 @@ TW_EXCLUDE_BASH := true
 TW_EXCLUDE_NANO := true
 TW_NO_LEGACY_PROPS := false
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_HAS_MTP := true
 TW_ROTATION := 90
 
 # TWRP Configuration
