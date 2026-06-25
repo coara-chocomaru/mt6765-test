@@ -32,7 +32,7 @@ on post-fs
     mkdir /dev/usb-ffs/adb 0770 shell shell
     mount functionfs adb /dev/usb-ffs/adb rmode=0770,fmode=0660,uid=2000,gid=2000,no_disconnect=1
     mkdir /dev/usb-ffs/fastboot 0770 system system
-    mount functionfs fastboot /dev/usb-ffs/fastboot rmode=0770,fmode=0660,uid=1000,gid=1000
+    mount functionfs fastboot /dev/usb-ffs/fastboot rmode=0770,fmode=0660,uid=1000,gid=1000,no_disconnect=1
     mkdir /dev/usb-ffs/mtp 0770 mtp mtp
     mount functionfs mtp /dev/usb-ffs/mtp rmode=0770,fmode=0660,uid=1024,gid=1024,no_disconnect=1
 
@@ -44,13 +44,16 @@ on boot
     write /sys/module/usb_f_mtp/parameters/mtp_rx_cont 1
     chmod 0664 /sys/class/android_usb/android0/iSerial
     chown root system /sys/class/android_usb/android0/iSerial
-    chmod a+x config/usb_gadget/g1
-    chmod a+x config/usb_gadget/g1/strings/0x409
+    chmod a+x /config/usb_gadget/g1
+    chmod a+x /config/usb_gadget/g1/strings/0x409
     chmod 0666 /config/usb_gadget/g1/strings/0x409/product
     write /sys/module/block/parameters/events_dfl_poll_msecs 1000
 
 on property:init.svc.adbd=stopped
     setprop sys.usb.ffs.ready 0
+
+on property:init.svc.fastbootd=stopped
+    setprop sys.usb.ffs.fastboot.ready 0
 
 on property:sys.usb.config=none && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor ${sys.usb.vid}
@@ -60,18 +63,16 @@ on property:sys.usb.config=none && property:sys.usb.configfs=1
     rm /config/usb_gadget/g1/configs/b.1/f4
     rm /config/usb_gadget/g1/configs/b.1/f5
     rmdir /config/usb_gadget/g1/functions/mtk_rndis.gs4
+    rmdir /config/usb_gadget/g1/functions/rndis.gs4
     write /sys/devices/platform/soc/mt_usb/saving 0
     write /config/usb_gadget/g1/UDC "none"
     stop adbd
     stop fastbootd
     setprop sys.usb.ffs.ready 0
+    setprop sys.usb.ffs.fastboot.ready 0
     write /config/usb_gadget/g1/bDeviceClass 0
     write /config/usb_gadget/g1/bDeviceSubClass 0
     write /config/usb_gadget/g1/bDeviceProtocol 0
-    rm /config/usb_gadget/g1/configs/b.1/f1
-    rm /config/usb_gadget/g1/configs/b.1/f2
-    rm /config/usb_gadget/g1/configs/b.1/f3
-    rmdir /config/usb_gadget/g1/functions/rndis.gs4
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=adb && property:sys.usb.configfs=1
@@ -100,12 +101,13 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=sideload && property:
 
 on property:sys.usb.config=fastboot && property:sys.usb.configfs=1
     setprop sys.usb.pid 0x4EE0
-    write /config/usb_gadget/g1/idVendor ${sys.usb.vid}
-    write /config/usb_gadget/g1/idProduct 0x4EE0
-    setprop sys.usb.pid 0x4EE0 
-    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "fastboot"
-    symlink /config/usb_gadget/g1/functions/ffs.fastboot /config/usb_gadget/g1/configs/b.1/f1
     start fastbootd
+
+on property:sys.usb.ffs.fastboot.ready=1 && property:sys.usb.config=fastboot && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "fastboot"
+    write /config/usb_gadget/g1/idVendor ${sys.usb.vid}
+    write /config/usb_gadget/g1/idProduct ${sys.usb.pid}
+    symlink /config/usb_gadget/g1/functions/ffs.fastboot /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
