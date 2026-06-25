@@ -15,13 +15,13 @@ BUILD_BROKEN_DUP_RULES := true
 BOARD_ROOT_EXTRA_FOLDERS += \
 metadata \
 wifi_cache \
-/mnt/vendor/protect_f \
-/mnt/vendor/protect_s \
-/mnt/vendor/nvcfg \
-/mnt/vendor/persist \
-/mnt/vendor/logwork \
-/mnt/vendor/vendor_aee_exp \
-/mnt/vendor/pstore
+protect_f \
+protect_s \
+nvcfg \
+persist \
+logwork \
+vendor_aee_exp \
+pstore
 
 BOARD_ROOT_EXTRA_SYMLINKS := \
 /mnt/vendor/protect_f:protect_f \
@@ -49,6 +49,7 @@ AB_OTA_PARTITIONS += \
     vbmeta_system \
     vendor \
     vendor_boot
+
 TARGET_OTA_ASSERT_DEVICE := SZJ-JS203
 BOARD_USES_RECOVERY_AS_BOOT := true
 BOARD_VENDOR := kyocera
