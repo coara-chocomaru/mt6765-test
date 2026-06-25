@@ -156,7 +156,7 @@ TW_EXCLUDE_TWRPAPP := true
 TW_EXCLUDE_PYTHON := true
 TW_EXCLUDE_BASH := true
 TW_EXCLUDE_NANO := true
-
+TW_ROTATION := 90
 # TWRP Configuration
 TW_THEME := landscape_hdpi
 TW_EXTRA_LANGUAGES := true
