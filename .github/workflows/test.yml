@@ -84,7 +84,12 @@ jobs:
         git clone ${{ inputs.DEVICE_TREE }} -b ${{ inputs.DEVICE_TREE_BRANCH }} ./${{ inputs.DEVICE_PATH }}
         cd ${{ inputs.DEVICE_PATH }}
         echo "COMMIT_ID=$(git rev-parse HEAD)" >> $GITHUB_ENV
-
+    
+    - name: Remove unused language files
+      run: |
+             cd ${GITHUB_WORKSPACE}/twrp
+             find bootable/recovery/gui/theme/common/languages/ \
+             -name "*.xml" ! -name "ja.xml" ! -name "en.xml" -delete
 
     - name: Building TWRP
       run: |
