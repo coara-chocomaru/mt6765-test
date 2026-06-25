@@ -35,9 +35,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bootctrl.mt6765 \
     bootctrl.mt6765.recovery \
-    android.hardware.fastboot@1.0-impl-mock \
     libgptutils \
     fastbootd
+
+PRODUCT_PACKAGES += \
+    bootctrl \
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
