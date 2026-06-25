@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-
+BOARD_RAMDISK_USE_LZ4 := true
 DEVICE_PATH := device/kyocera/szj203
 BUILD_BROKEN_DUP_RULES := true
 # For building with minimal manifest
