@@ -1,4 +1,3 @@
-#
 # Copyright (C) 2024 The Android Open Source Project
 # Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
 #
@@ -187,7 +186,7 @@ TW_EXCLUDE_PYTHON := true
 TW_EXCLUDE_BASH := true
 TW_EXCLUDE_NANO := true
 TW_NO_LEGACY_PROPS := false
-TW_EXCLUDE_DEFAULT_USB_INIT := true
+# TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_ROTATION := 90
 
 # TWRP Configuration
