@@ -154,6 +154,8 @@ PLATFORM_VERSION := 16.1.0
 TW_EXCLUDE_APEX := true
 TW_EXCLUDE_TWRPAPP := true
 TW_EXCLUDE_PYTHON := true
+TW_EXCLUDE_BASH := true
+TW_EXCLUDE_NANO := true
 
 # TWRP Configuration
 TW_THEME := landscape_hdpi
