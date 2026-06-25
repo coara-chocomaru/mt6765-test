@@ -4,7 +4,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-LZMA_RAMDISK_TARGETS := recovery
+
+BOARD_RAMDISK_USE_LZMA := true
 LZMA_RAMDISK_TARGETS := boot
 DEVICE_PATH := device/kyocera/szj203
 BUILD_BROKEN_DUP_RULES := true
