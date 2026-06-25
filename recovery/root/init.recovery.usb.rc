@@ -6,7 +6,7 @@ on post-fs
     setprop sys.usb.vid "0x18D1"
     setprop sys.usb.vid.mtk "0x0482"
 
-    mkdir /config
+    mkdir /config 0775
     mount configfs none /config
     mkdir /config/usb_gadget/g1 0770 shell shell
     write /config/usb_gadget/g1/idVendor 0x18D1
@@ -80,6 +80,7 @@ on property:sys.usb.config=adb && property:sys.usb.configfs=1
     start adbd
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=adb && property:sys.usb.configfs=1
+    rm /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "adb"
     write /config/usb_gadget/g1/idVendor ${sys.usb.vid}
     write /config/usb_gadget/g1/idProduct ${sys.usb.pid}
@@ -92,6 +93,7 @@ on property:sys.usb.config=sideload && property:sys.usb.configfs=1
     start adbd
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=sideload && property:sys.usb.configfs=1
+    rm /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "sideload"
     write /config/usb_gadget/g1/idVendor ${sys.usb.vid}
     write /config/usb_gadget/g1/idProduct ${sys.usb.pid}
@@ -100,6 +102,7 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=sideload && property:
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.ffs.fastboot.ready=1 && property:sys.usb.config=fastboot && property:sys.usb.configfs=1
+    rm /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "fastboot"
     write /config/usb_gadget/g1/idVendor 0x18D1
     write /config/usb_gadget/g1/idProduct ${sys.usb.pid}
@@ -120,12 +123,14 @@ on property:sys.usb.config=fastboot && property:sys.usb.configfs=1
 
 on property:sys.usb.config=mtp && property:sys.usb.configfs=1
     setprop sys.usb.pid 0x2008
+    rm /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "mtp"
     symlink /config/usb_gadget/g1/functions/mtp.gs0 /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=mtp && property:sys.usb.configfs=1 && property:sys.usb.ffs.mtp.ready=1
+    rm /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "mtp"
     write /config/usb_gadget/g1/idVendor ${sys.usb.vid.mtk}
     write /config/usb_gadget/g1/idProduct ${sys.usb.pid}
@@ -139,6 +144,8 @@ on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1
     start adbd
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1 && property:sys.usb.ffs.mtp.ready=1
+    rm /config/usb_gadget/g1/configs/b.1/f1
+    rm /config/usb_gadget/g1/configs/b.1/f2
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "mtp_adb"
     write /config/usb_gadget/g1/idVendor ${sys.usb.vid.mtk}
     write /config/usb_gadget/g1/idProduct ${sys.usb.pid}
@@ -150,6 +157,7 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,adb && property:s
 
 on property:sys.usb.config=mass_storage && property:sys.usb.configfs=1
     setprop sys.usb.pid 0x2002
+    rm /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "ums"
     write /config/usb_gadget/g1/idVendor ${sys.usb.vid.mtk}
     write /config/usb_gadget/g1/idProduct ${sys.usb.pid}
@@ -162,6 +170,8 @@ on property:sys.usb.config=mass_storage,adb && property:sys.usb.configfs=1
     start adbd
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mass_storage,adb && property:sys.usb.configfs=1
+    rm /config/usb_gadget/g1/configs/b.1/f1
+    rm /config/usb_gadget/g1/configs/b.1/f2
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "ums_adb"
     write /config/usb_gadget/g1/idVendor ${sys.usb.vid.mtk}
     write /config/usb_gadget/g1/idProduct ${sys.usb.pid}
