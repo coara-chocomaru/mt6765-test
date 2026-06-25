@@ -23,25 +23,6 @@ odm /odm ext4 ro wait,avb,logical,first_stage_mount,slotselect
 
 /dev/block/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,errors=panic,inlinecrypt latemount,wait,check,quota,reservedsize=128M,formattable,resize,,checkpoint=block,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption
 
-
-
-
-/dev/block/by-name/protect1 /mnt/vendor/protect_f ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
-/dev/block/by-name/protect2 /mnt/vendor/protect_s ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
-/dev/block/by-name/nvcfg /mnt/vendor/nvcfg ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
-
-
-/dev/block/by-name/persist /mnt/vendor/persist ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
-
-
-/dev/block/by-name/logwork /mnt/vendor/logwork ext4 nosuid,nodev,barrier=1,noauto_da_alloc,noatime,discard wait,check,nofail
-
-
-/dev/block/by-name/vendaeeexp /mnt/vendor/vendor_aee_exp ext4 nosuid,nodev,barrier=1,noauto_da_alloc,noatime,discard wait,check,nofail
-
-/dev/block/by-name/sysprop /mnt/vendor/pstore ext4 nosuid,nodev,barrier=1,noauto_da_alloc,noatime,data=journal,errors=panic wait,check,nofail
-
-
 /devices/platform/externdevice* auto auto defaults voldmanaged=sdcard1:auto,encryptable=userdata
 
 
@@ -102,5 +83,4 @@ odm /odm ext4 ro wait,avb,logical,first_stage_mount,slotselect
 /dev/block/by-name/dtbo /dtbo emmc defaults defaults
 
 /dev/block/by-name/vbmeta /vbmeta emmc defaults defaults
-
 /dev/block/by-name/wifi_cache /wifi_cache ext4 nosuid,nodev,barrier=1,noauto_da_alloc,noatime,data=journal,errors=panic wait,check,nofail
