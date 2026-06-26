@@ -37,10 +37,13 @@ PRODUCT_PACKAGES += \
     bootctrl.mt6765 \
     bootctrl.mt6765.recovery \
     libgptutils \
-    fastbootd
+    fastbootd \
+    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery
+ 
 
 PRODUCT_PACKAGES += \
-    bootctrl \
+    bootctrl
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -48,6 +51,8 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
+
+PRODUCT_ENFORCE_VINTF_MANIFEST := true 
 
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
