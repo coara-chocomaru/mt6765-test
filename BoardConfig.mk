@@ -19,7 +19,6 @@ protect_s \
 nvcfg \
 persist \
 logwork \
-vendor_aee_exp \
 pstore
 
 BOARD_ROOT_EXTRA_SYMLINKS := \
@@ -28,7 +27,6 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 /mnt/vendor/nvcfg:nvcfg \
 /mnt/vendor/persist:persist \
 /mnt/vendor/logwork:logwork \
-/mnt/vendor/vendor_aee_exp:vendor_aee_exp \
 /mnt/vendor/pstore:pstore
 
 ALLOW_MISSING_DEPENDENCIES := true
