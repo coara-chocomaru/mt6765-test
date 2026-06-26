@@ -37,6 +37,8 @@ PRODUCT_PACKAGES += \
     bootctrl.mt6765 \
     bootctrl.mt6765.recovery \
     libgptutils \
+    libz \
+    libcutils \
     fastbootd \
     android.hardware.fastboot@1.0-impl-mock \
     android.hardware.fastboot@1.0-impl-mock.recovery
@@ -46,15 +48,15 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     create_pl_dev \
-    create_pl_dev.recovery
+    create_pl_dev.recovery \
+    checkpoint_gc
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
     update_engine \
     update_verifier \
-    update_engine_sideload \
-    checkpoint_gc
+    update_engine_sideload
 
 PRODUCT_ENFORCE_VINTF_MANIFEST := true 
 
