@@ -44,8 +44,8 @@ PRODUCT_PACKAGES += \
     libz \
     libcutils \
     fastbootd \
-    android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery
+    android.hardware.fastboot@1.1-impl-mock \
+    android.hardware.fastboot@1.1-impl-mock.recovery
 
 PRODUCT_PACKAGES += \
     bootctrl \
