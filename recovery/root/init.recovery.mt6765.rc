@@ -2,12 +2,56 @@ on init
     setprop sys.usb.configfs 1
     setprop sys.usb.controller "musb-hdrc"
     setprop sys.usb.ffs.aio_compat 1
+    export LD_LIBRARY_PATH /system/lib64:/system/lib:/vendor/lib64:/vendor/lib
 
 on fs && property:ro.debuggable=0
     # distinguish USB shoulde connect or not, i.e. CDP vs SDP
     write /sys/class/udc/musb-hdrc/device/cmode 2
     # set charging free due to it wait for USB activation
     start adbd
+
+
+on init
+    wait /dev/block/by-name/md_udc 
+    wait /dev/block/by-name/userdata
+    logical_partitions_mapped
+    wait /dev/block/mapper/vendor
+    mount ext4 /dev/block/mapper/vendor /vendor ro barrier=1
+    setenforce 0
+
+on property:ro.crypto.state=encrypted && property:twrp.decrypt.done=false
+    start servicemanager
+    start hwservicemanager
+    start vendor.trustonic.tee
+    start vendor.keymaster-4-1
+
+service servicemanager /system/bin/servicemanager
+    class core
+    user root
+    group root readproc
+    disabled
+    seclabel u:r:recovery:s0
+
+service hwservicemanager /system/bin/hwservicemanager
+    class core
+    user root
+    group root readproc
+    disabled
+    seclabel u:r:recovery:s0
+
+service vendor.trustonic.tee /vendor/bin/hw/vendor.trustonic.tee@1.1-service
+    class core
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service vendor.keymaster-4-1 /vendor/bin/hw/android.hardware.keymaster@4.1-service.trustonic
+    class early_hal
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
 
 service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
     class main
