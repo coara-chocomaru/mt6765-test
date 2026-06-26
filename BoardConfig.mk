@@ -3,8 +3,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-# BOARD_RAMDISK_USE_LZ4 := true
-# LZ4_RAMDISK_TARGETS := boot
+BOARD_RAMDISK_USE_LZ4 := true
+LZ4_RAMDISK_TARGETS := boot
 
 DEVICE_PATH := device/kyocera/szj203
 BUILD_BROKEN_DUP_RULES := true
@@ -187,6 +187,12 @@ TW_EXCLUDE_NANO := true
 TW_NO_LEGACY_PROPS := false
 # TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_ROTATION := 90
+
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_USE_FSCRYPT_POLICY := 2
+TW_PREPARE_DATA_MEDIA_EARLY := true
 
 # TWRP Configuration
 TW_THEME := landscape_hdpi
